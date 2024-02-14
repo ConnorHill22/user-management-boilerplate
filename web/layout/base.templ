@@ -1,0 +1,18 @@
+package layout
+
+templ Base() {
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>User Management</title>
+        <link href="../static/main.css" rel="stylesheet"/>
+        <script src="https://unpkg.com/htmx.org@1.9.9"></script>
+        // <script src="/assets/js/htmx.min.js"></script>
+        <!-- You can include additional meta tags, link tags, and stylesheets here -->
+    </head>
+    <body>
+        {children...}
+    </body>
+    </html>
+}

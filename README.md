@@ -8,6 +8,10 @@ Basic boiler plate repo for a basic user management system using Supabase, Golan
 - Backend (Golang [Echo])
 - Frontend
   - HTMX
-  - Server components
   - Tailwind
   - Some other sprinkles of TS
+
+
+### Some Sugar
+- API Request Logging with Zap
+- 

@@ -1,0 +1,13 @@
+package web_home
+
+import (
+    "github.com/ConnorHill22/user-management-boilerplate/web/layout"
+)
+
+templ Home() {
+    @layout.Base() {
+        <div class="min-h-screen flex items-center justify-center">
+            <a href="/auth/login" class="button">Login</a>
+        </div>
+    }
+}

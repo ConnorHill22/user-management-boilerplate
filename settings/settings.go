@@ -3,7 +3,7 @@ package settings
 import (
 	"log"
 
-	"github.com/ConnorHill22/user-management-boilerplate/utils"
+	lib "github.com/ConnorHill22/user-management-boilerplate/library"
 	"github.com/joho/godotenv"
 )
 
@@ -18,7 +18,7 @@ func init() {
 		log.Fatal(err)
 	}
 
-	BaseURL = utils.Getenv("BASE_URL", "localhost:3000")
-	SupabaseKey = utils.Getenv("SUPABASE_KEY", "")
-	SupabaseURL = utils.Getenv("SUPABASE_URL", "")
+	BaseURL = lib.Getenv("BASE_URL", "localhost:3000")
+	SupabaseKey = lib.Getenv("SUPABASE_KEY", "")
+	SupabaseURL = lib.Getenv("SUPABASE_URL", "")
 }
