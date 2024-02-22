@@ -1,25 +1,25 @@
 package api_auth_route
 
 import (
-	"encoding/json"
 	"log"
 	"net/http"
 
 	sup "github.com/ConnorHill22/user-management-boilerplate/internal/supabase"
+	lib "github.com/ConnorHill22/user-management-boilerplate/library"
+	"github.com/ConnorHill22/user-management-boilerplate/web/view/component"
 	"github.com/labstack/echo/v4"
 	supa "github.com/nedpals/supabase-go"
 )
 
 type UserCredentials struct {
-	Email    string `json:"Email"`
-	Password string `json:"Password"`
+	Email    string `form:"Email"`
+	Password string `form:"Password"`
 }
 
 func RegisterUserEndpoint(c echo.Context) error {
-	creds := UserCredentials{}
-	defer c.Request().Body.Close()
-	err := json.NewDecoder(c.Request().Body).Decode(&creds)
-	if err != nil {
+	creds := new(UserCredentials)
+
+	if err := c.Bind(creds); err != nil {
 		log.Fatalf("Failed reading the request body %s", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error)
 	}
@@ -35,10 +35,9 @@ func RegisterUserEndpoint(c echo.Context) error {
 }
 
 func SignInEndpoint(c echo.Context) error {
-	creds := UserCredentials{}
-	defer c.Request().Body.Close()
-	err := json.NewDecoder(c.Request().Body).Decode(&creds)
-	if err != nil {
+	creds := &UserCredentials{}
+
+	if err := c.Bind(creds); err != nil {
 		log.Fatalf("Failed reading the request body %s", err)
 		return echo.NewHTTPError(http.StatusInternalServerError, err.Error)
 	}
@@ -46,10 +45,15 @@ func SignInEndpoint(c echo.Context) error {
 		Email:    creds.Email,
 		Password: creds.Password,
 	})
-
 	if err != nil {
-		panic(err)
+		return lib.Render(c, http.StatusOK, component.SimpleError("Invalid Credentials"))
 	}
-	log.Println(user)
+
+	cookie := new(http.Cookie)
+	cookie.Name = "token"
+	cookie.Value = user.AccessToken
+	cookie.Path = "/"
+	c.SetCookie(cookie)
+	c.Response().Header().Set("HX-Location", "/dashboard")
 	return c.String(http.StatusOK, "User SignedIn")
 }

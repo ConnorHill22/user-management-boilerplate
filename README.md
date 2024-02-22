@@ -14,4 +14,7 @@ Basic boiler plate repo for a basic user management system using Supabase, Golan
 
 ### Some Sugar
 - API Request Logging with Zap
-- 
+
+
+## Todo
+- [ ] Implement Refresh when token expires

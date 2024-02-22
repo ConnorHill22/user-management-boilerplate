@@ -8,9 +8,10 @@ import (
 )
 
 var (
-	BaseURL     string
-	SupabaseURL string
-	SupabaseKey string
+	BaseURL            string
+	SupabaseURL        string
+	SupabaseKey        string
+	SupbabaseJwtSecret string
 )
 
 func init() {
@@ -21,4 +22,5 @@ func init() {
 	BaseURL = lib.Getenv("BASE_URL", "localhost:3000")
 	SupabaseKey = lib.Getenv("SUPABASE_KEY", "")
 	SupabaseURL = lib.Getenv("SUPABASE_URL", "")
+	SupbabaseJwtSecret = lib.Getenv("SUPABASE_JWT_SECRET", "")
 }
