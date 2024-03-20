@@ -7,3 +7,6 @@
 .htmx-request.custom-indicator{
     display:inline;
 }
+body {
+    font-family: "Comfortaa", sans-serif;
+}

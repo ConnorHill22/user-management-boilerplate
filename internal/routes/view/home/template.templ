@@ -1,0 +1,28 @@
+package view_home_route
+
+import "github.com/ConnorHill22/user-management-boilerplate/web/layout"
+
+templ HomeTemplate() {
+  @layout.BaseNavbar() {
+    <div class="flex justify-center h-screen w-screen">
+      <div class="w-4/6">
+        <div class="grid grid-cols-2 gap-4 place-content-center h-screen">
+          <div class="w-full">
+            <img src="/static/images/pair_programming.svg" class="h-full" alt="Logo" />
+          </div>
+          <div class="flex flex-col w-full justify-center items-center">
+            <h1 class="text-secondary text-8xl my-4">AIdaptive</h1>
+            <h2 class="text-center text-black text-2xl my-2">Streamlining IT support for your small businesses.</h2>
+            <button
+              type="button"
+              onclick="location.href='/auth/signin'"
+              class="block text-xl my-8 py-1 px-12 text-white bg-primary border-2 border-primary rounded-lg hover:border-2 hover:border-primary hover:bg-gray-100 hover:text-t-black md:hover:bg-transparent md:border-2 md:hover:text-blue-700"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+}

@@ -23,7 +23,7 @@ func Base() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>User Management</title><link href=\"../static/main.css\" rel=\"stylesheet\"><link href=\"../static/custom.css\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@1.9.9\"></script><!-- You can include additional meta tags, link tags, and stylesheets here --></head><body>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>AIdaptive</title><link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"><link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin><link href=\"https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&amp;display=swap\" rel=\"stylesheet\"><link href=\"/static/main.css\" rel=\"stylesheet\"><link href=\"/static/custom.css\" rel=\"stylesheet\"><script src=\"https://unpkg.com/htmx.org@1.9.9\"></script><!-- You can include additional meta tags, link tags, and stylesheets here --></head><body>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

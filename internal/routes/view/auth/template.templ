@@ -1,0 +1,92 @@
+package view_auth_route
+
+import (
+  "github.com/ConnorHill22/user-management-boilerplate/web/layout"
+  "github.com/ConnorHill22/user-management-boilerplate/web/component"
+)
+
+
+templ AuthLayoutTemplate(props AuthLayoutTemplateProps) {
+  @layout.Base() {
+    <div class="min-h-screen bg-light-bg py-6 flex flex-col justify-center sm:py-12">
+      <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-primary to-secondary shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+        </div>
+        <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+          <div class="max-w-md mx-auto">
+            <div>
+              <h1 class="text-4xl text-t-black font-semibold">{props.Title}</h1>
+              <h3 class="text-xl text-t-black mt-5">{props.Subtitle}</h3>
+            </div>
+            @props.FormComponents
+            <div>
+              <p>
+                {props.SwitchAuthPrefixText}
+                <a href={templ.URL(props.SwitchAuthPath)} class="text-secondary hover:underline">
+                  {props.SwitchAuthActionText}
+                </a>
+              </p>
+            </div>
+            <div class="pt-5">@props.Message</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+}
+
+templ SignUpFormTemplate() {
+  <form class="mb-0" action="/auth/signup" method="post">
+    <div class="divide-y divide-gray-200">
+      <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+        <div class="relative">
+          @component.LabeledInput(component.InputProps{
+            InputType: "text",
+            Name: "Email",
+          })
+        </div>
+        <div class="relative">
+          @component.LabeledInput(component.InputProps{
+            InputType: "password",
+            Name: "Password",
+          })
+        </div>
+        <div class="relative">
+          @component.LabeledInput(component.InputProps{
+            InputType: "password",
+            Name: "Confirm Password",
+          })
+        </div>
+        <div class="relative pt-5">
+          <button class="bg-primary text-white rounded-md px-8 py-1">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+}
+
+templ SignInFormTemplate() {
+  <form class="mb-0" action="/auth/signin" method="post">
+    <div class="divide-y divide-gray-200">
+      <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+        <div class="relative">
+          @component.LabeledInput(component.InputProps{
+            InputType: "text",
+            Name: "Email",
+          })
+        </div>
+        <div class="relative">
+          @component.LabeledInput(component.InputProps{
+            InputType: "password",
+            Name: "Password",
+          })
+        </div>
+        <div class="relative pt-5">
+          <button class="bg-primary text-white rounded-md px-8 py-1">Submit</button>
+        </div>
+      </div>
+    </div>
+  </form>
+}
+
