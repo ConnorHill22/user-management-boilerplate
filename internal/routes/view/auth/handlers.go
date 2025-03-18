@@ -7,7 +7,7 @@ import (
 
 	sup "github.com/ConnorHill22/user-management-boilerplate/internal/supabase"
 	lib "github.com/ConnorHill22/user-management-boilerplate/library"
-	"github.com/ConnorHill22/user-management-boilerplate/web/component"
+	component "github.com/ConnorHill22/user-management-boilerplate/web/components"
 	"github.com/a-h/templ"
 
 	view_dashboard_route "github.com/ConnorHill22/user-management-boilerplate/internal/routes/view/dashboard"

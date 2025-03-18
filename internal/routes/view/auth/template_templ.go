@@ -11,7 +11,7 @@ import "io"
 import "bytes"
 
 import (
-	"github.com/ConnorHill22/user-management-boilerplate/web/component"
+	"github.com/ConnorHill22/user-management-boilerplate/web/components"
 	"github.com/ConnorHill22/user-management-boilerplate/web/layout"
 )
 
